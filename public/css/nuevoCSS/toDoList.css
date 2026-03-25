@@ -1,0 +1,68 @@
+@import 'utilities.css';
+@import 'pagination.css';
+
+/*Card principal del To Do list*/
+.todoList-card{
+    background-color: var(--colorBGIntermedio);
+    padding: 2.625rem;
+
+}
+.todo-contenedor {
+    padding: 30px;
+    max-width: 400px;
+}
+.todo-titulo{
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.todo-lista{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item-contenedor{
+  border-bottom: 1px solid var(--colorBGClaro);
+  padding: 15px 0;
+}
+
+.todo-fila{
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+.drag-icon{
+  border: 2px solid var(--colorBGClaro);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sombra);
+  cursor: grab;
+}
+
+/*titulo de la tarea*/
+.todo-titulo{
+    font-size: 1.1rem;
+    color: var(--colorFuenteBlanco);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.todo-contadorTiempo {
+    background-color: var(--grisAzulado);
+    color: var(--colorFuenteBlanco);
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.todo-acciones {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}

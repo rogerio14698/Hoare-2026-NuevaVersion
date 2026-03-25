@@ -1,0 +1,41 @@
+/* Utility classes and layout-related styles */
+
+.fuente-negro{
+    color: var(--colorFuenteNegro);
+}
+.fuente-blanco{
+    color:var(--colorFuenteBlanco);
+}
+.fuente-gris{
+    color:var(--colorFuenteGris);
+}
+.fuente-gris-claro{
+    color:var(--colorFuenteGrisClaro);
+}
+
+.bg-tarea {
+    background-color: var(--colorTareaBG) ;
+    color: var(--colorFuenteBlanco) ;
+}
+
+.bg-calendario {
+    background-color: var(--colorCalendarioBG);
+    color: var(--colorFuenteBlanco) ;
+}
+
+.bg-todo {
+    background-color: var(--colorToDoBG) ;
+    color: var(--colorFuenteBlanco) ;
+}
+
+.text-nav {
+    color: var(--colorNav);
+}
+
+.text-gris {
+    color: var(--gris);
+}
+
+.dataTables_length{
+    color:var(--colorFuenteNegro);
+}

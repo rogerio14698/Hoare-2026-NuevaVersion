@@ -1,0 +1,84 @@
+
+/* Wrapper similar to .todoList-card */
+.newsfeed {
+    background-color: var(--colorBGIntermedio);
+    padding: 10px;
+    margin: 0;
+    color: var(--colorFuenteBlanco);
+    border-radius: 0.25rem;
+}
+
+.newsfeed__container {
+    padding: 30px;
+    max-width: 400px;
+    box-shadow: var(--sombra);
+}
+
+.newsfeed__title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+    color: var(--colorFuenteBlanco);
+}
+
+.newsfeed__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.newsfeed__item {
+    border-bottom: 1px solid var(--colorBGClaro);
+    padding: 15px 0;
+}
+
+.newsfeed__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.newsfeed__meta {
+    min-width: 110px;
+}
+
+.newsfeed__time {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--colorFuenteBlanco);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.newsfeed__action {
+    margin: 0 0 8px 0;
+    font-size: 1.05rem;
+    color: var(--colorFuenteBlanco);
+}
+
+.newsfeed__author { font-weight: 700; }
+.newsfeed__link { color: var(--colorFuenteBlanco); text-decoration: underline; font-weight: 600; }
+
+.newsfeed__body {
+    background-color: var(--colorBGGrisAzulado);
+    color: var(--colorFuenteBlanco);
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.newsfeed__content { margin: 0; }
+
+/* Action buttons area (if needed) */
+.newsfeed__actions { margin-left: auto; display:flex; gap:10px; }
+.newsfeed__action-btn { color: var(--grisAzulado); font-size: 1.2rem; text-decoration: none; }
+.newsfeed__action-btn:hover { color: var(--colorFuenteBlanco); }
+
+/* Remove Bootstrap classes interference */
+.newsfeed .btn, .newsfeed .p-3, .newsfeed .bg-light { all: unset; }
+
+@media (max-width: 576px) {
+    .newsfeed__container { padding: 18px; }
+    .newsfeed__time { font-size: 0.8rem; }
+    .newsfeed__action { font-size: 1rem; }
+    .newsfeed__body { font-size: 0.92rem; }
+}

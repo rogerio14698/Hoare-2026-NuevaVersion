@@ -1,0 +1,160 @@
+@import 'utilities.css';
+@import 'pagination.css';
+
+
+.btn-checkIn {
+background-color: var(--ColorEnProceso);
+color: var(--colorFuenteNegro);
+border: none;
+
+}
+.btn-checkIn:hover {
+background-color: #52e084; /* Un tono más oscuro para el efecto visual */
+}
+
+.btn-informeMes {
+background-color: var(--ColorRol);
+color: var(--colorFuenteNegro);
+border: none;
+}
+.btn-informeMes:hover {
+background-color: #029ad8;
+}
+
+.btn-Cerrar {
+background-color: var(--ColorCerrado);
+color: var(--colorFuenteBlanco);
+}
+.btn-Cerrar:hover {
+background-color: #444444;
+}
+
+
+
+/* Botón Añadir Tarea */
+.btn-nueva-tarea {
+    background: transparent;
+    border: 2px solid var(--grisAzulado);
+    color: var(--grisAzulado);
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-nuevo-comentario {
+    background: transparent;
+    border: 2px solid var(--grisAzulado);
+    color: var(--grisAzulado);
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-modificar {
+    display: inline-block;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid var(--grisAzulado);
+    color: var(--grisAzulado);
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-modificar:hover {
+    background: var(--grisAzulado);
+    color: var(--colorFuenteBlanco);
+}
+
+
+.btn-nueva-tarea:hover {
+    background: var(--grisAzulado);
+    color: var(--colorFuenteBlanco);
+}
+.btn-nuevo-comentario:hover {
+    background: var(--grisAzulado);
+    color: var(--colorFuenteBlanco);
+}
+.action-btn {
+    color: var(--grisAzulado);
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.action-btn:hover {
+    color: var(--colorFuenteBlanco);
+}
+.btn-accion {
+    display: inline-block;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid var(--grisAzulado);
+    color: var(--blanco);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-accion:hover {
+    filter: brightness(1.2);
+    background: var(--grisAzulado); /* Opcional: relleno para diferenciarlo */
+    color: white;
+}
+
+.btn-cancelar {
+    display: inline-block;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid var(--grisAzulado);
+    color: var(--grisAzulado);
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-guardar {
+    display: inline-block;
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid var(--grisAzulado);
+    color: var(--grisAzulado);
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-guardar:hover {
+    filter: brightness(1.2);
+    background: var(--grisAzulado); /* Opcional: relleno para diferenciarlo */
+    color: white;
+}
+.btn-cancelar:hover {
+    filter: brightness(1.2);
+    background: var(--grisAzulado); /* Opcional: relleno para diferenciarlo */
+    color: white;
+}
+
+.btn-eliminar{
+    background: transparent;
+    border: 2px solid var(--grisAzulado);
+    color: var(--grisAzulado);
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-eliminar:hover {
+    filter: brightness(1.2);
+    background: var(--grisAzulado); /* Opcional: relleno para diferenciarlo */
+    color: rgb(255, 0, 0);
+}
+

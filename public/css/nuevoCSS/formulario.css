@@ -1,0 +1,212 @@
+.project-form-container {
+            background-color: var(--colorBGGrisAzulado);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        /* --- CABECERA DEL FORMULARIO --- */
+        .form-header {
+            background-color: var(--colorBGIntermedio);
+            padding: 25px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .card-title {
+            margin: 0;
+            color: var(--blanco);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* --- CUERPO DEL FORMULARIO --- */
+        .form-body {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dos columnas para un diseño limpio */
+            gap: 25px;
+        }
+
+        /* Algunos campos ocupan todo el ancho */
+        .full-width {
+            grid-column: span 2;
+        }
+
+        /* --- ESTILOS DE GRUPOS DE CAMPO (LABEL + INPUT) --- */
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+            color: var(--blanco);
+            font-size: 1.05rem;
+            text-decoration: underline;
+        }
+
+        /* --- ESTILOS DE LOS INPUTS, SELECTS Y TEXTAREAS --- */
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 15px;
+            color: var(--text-dark);
+            box-sizing: border-box; /* Importante para el padding */
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color:var(--colorBGClaro); /* Un tono más oscuro del azul del panel */
+            box-shadow: none
+        }
+
+        textarea.form-control {
+            resize: vertical; /* Solo permitir redimensionar verticalmente */
+        }
+
+        /* Estilo especial para el input file */
+        input[type="file"].form-control {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        /* Estilos para textos de ayuda pequeños */
+        .form-text.text-muted {
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* --- ESTILOS PARA CHECKBOXES --- */
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-check-input {
+            margin: 0 10px 0 0;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }
+
+        .form-check-label {
+            font-size: 14px;
+            color: var(--gris);
+            cursor: pointer;
+        }
+
+        /* --- SECCIÓN DE VISTA PREVIA DE IMAGEN --- */
+        .preview-section {
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .img-fluid.mt-2 {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            margin-top: 10px;
+        }
+
+        .preview-section p {
+            font-size: 14px;
+            margin: 10px 0 5px 0;
+        }
+
+        .preview-section a {
+            color: #4a54e1; /* Color de link basado en el panel */
+            text-decoration: none;
+            word-break: break-all; /* Para links largos */
+        }
+
+        .preview-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- PIE DEL FORMULARIO (BOTONES) --- */
+        .form-footer {
+            background-color: var(--bg-dark-panel);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: flex-end; /* Botones a la derecha */
+            gap: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* --- ESTILOS DE BOTONES --- */
+        .btn {
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-family);
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Botón Guardar (Verde Menta de la imagen 2) */
+        .btn-submit {
+            background-color: var(--accent-green);
+            color: #1a4f2e; /* Texto oscuro para contraste */
+        }
+
+        .btn-submit:hover {
+            background-color: #4ed97e; /* Un tono más oscuro en hover */
+        }
+
+        /* Botón Cancelar (Gris claro de la imagen 1) */
+        .btn-cancel {
+            background-color: #f1f1f1;
+            color: var(--text-dark);
+        }
+
+        .btn-cancel:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* --- CONTENEDOR FLEX PARA CAMPO + BOTÓN --- */
+        .form-field-with-button {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Campo flexible dentro del contenedor --- */
+        .form-field-flexible {
+            flex: 1;
+        }
+
+        /* Botón junto a un campo --- */
+        .form-field-button {
+            margin-top: 0;
+            align-self: stretch;
+        }
+
+        /* --- CONTENEDOR DE ACCIONES (BOTONES FINALES) --- */
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /*Fin de estilos Formulario*/

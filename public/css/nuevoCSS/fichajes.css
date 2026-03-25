@@ -1,0 +1,21 @@
+@import 'utilities.css';
+@import 'pagination.css';
+
+
+.card-body {
+    display: block;
+    padding-top: 10px;
+    text-align: center;
+    border-top: none;
+}
+
+
+
+.card-fichajes{
+    background-color: var(--colorBGOscuro) !important;
+    padding: 2.625rem;
+}
+
+
+
+

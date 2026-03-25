@@ -1,0 +1,175 @@
+@import 'utilities.css';
+@import 'pagination.css';
+
+
+/* ==========================================================================
+   Archivo: tareas.css
+   Descripción: Estilos para la sección de Sobrevista de Tareas
+   ========================================================================== */
+
+.tarea-card {
+    background-color: var(--colorBGClaro);
+    padding: 2.2rem 2.625rem 0 2.625rem;
+
+    
+}
+header h3{
+    font-size: 30px;
+    color:var(--blanco);
+    border-bottom: 1px solid var(--bordes);
+}
+header h3 span{
+    font-size: 16px;
+    color:var(--negro);
+    text-transform: uppercase;
+}
+
+/*Tarea esta semana*/
+
+/* Headers de grupos (Semana / Más tareas) */
+.tarea-estaSemana{
+    padding: 15px 0;
+    border-radius: 4px;
+}
+.tarea-header {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+.tarea-tituloHeader{    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+}
+/* El círculo con el número dinámico */
+.tarea-conteo {
+    background: var(--colorBGContador);
+    color: var(--colorFuenteNegro);
+    padding: 10px;
+    border-radius: 50%;
+    max-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+.tarea-header h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--colorFuenteNegro);
+    margin: 0;
+    text-transform: uppercase;
+
+}
+/* Botón Plus (+) */
+.tarea-btn-nuevaTarea button {
+    background: var(--blanco);
+    border-radius: 50%;
+    border: 1px solid var(--gris);
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+    color: var(--negro);
+    transition: transform 0.2s;
+}
+.tarea-btn-nuevaTarea button:hover {
+    transform: scale(1.1);
+}
+
+/*=================== Fin del header ===================*/
+
+/* Estructura de Filas */
+.tarea-fila {
+    display: flex;
+    padding: 2px 10px ;
+    /*Ver linea en colores */
+    border-bottom: 1px solid var(--colorBGOscuro);
+    max-width: 100%;
+    margin-bottom:0.5em;
+   
+}
+/* Ajustes de los textos internos */
+.tarea-fila h5 {
+    margin: 0;
+    font-size: 0.875rem;
+    white-space: pre-wrap; /* Evita que el texto salte de línea */
+    text-overflow: ellipsis; /* Si el nombre es muy largo, pone "..." */
+}
+.tarea-cliente{
+    flex: 0 0 25%; 
+    font-weight: 700;
+  
+}
+.tarea-cliente a h5 {
+    color: var(--colorFuenteBlanco);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: underline;
+    margin: 0;
+}
+.tarea-titulo {
+    flex: 1 1 auto; 
+    padding-left: 15px; 
+    font-weight: 400;
+}
+
+.tarea-titulo a h5 {
+    text-decoration: underline;
+    color: var(--colorFuenteGris);
+    margin: 0;
+    white-space: pre-wrap; /* Evita que el texto salte de línea */
+    overflow: hidden;   /* Oculta el texto que se desborda */
+    text-overflow: ellipsis; /* Si el título es muy largo, pone "..." */
+}
+
+.tarea-fecha {
+    color: var(--colorFuenteGrisClaro);
+    text-align: right;
+    padding-left: 15px; 
+    padding-right: 15px;
+    flex: 0 0 auto;
+}
+.tarea-estado{
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--colorFuenteNegro);
+}
+/* Estilo específico de las etiquetas de estado */
+.tarea-estado h5 {
+    padding: 4px 8px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    min-width: 110px; /* Ancho fijo para que todos los botones midan igual */
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    border-radius: 2px;
+    color: var(--colorFuenteNegro);
+}
+
+/*Colores de las etiquetas de estado */
+.bgColorEnProceso { background-color: var(--colorBGEnProceso); }
+.bgColorPorHacer { background-color: var(--colorBGPorHacer); }
+.bgColorEnProduccion { background-color: var(--colorBGEnProduccion); }
+.bgColorEnEspera { background-color: var(--colorBGEnEspera); }
+.bgColorCliente { background-color: var(--colorBGCliente); }
+.bgColorFacturar { background-color: var(--colorBGFacturar); }
+.bgColorCerrado { background-color: var(--colorBGCerrado); }
+.bgColorRol { background-color: var(--colorBGRol); }
+.bgColorDefault { background-color: var(--colorBGDefault); }
+/*Fin de tarea por semana*/
+
+
+
+
+

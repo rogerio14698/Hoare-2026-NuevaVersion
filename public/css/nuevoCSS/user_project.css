@@ -1,0 +1,314 @@
+@import 'utilities.css';
+@import 'pagination.css';
+
+
+.usuario-mglab {
+    width: 100%;
+    background: var(--colorUser);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.header-userProject {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--colorUser);
+    justify-content: space-between;
+}
+
+
+.logo-userProject img {
+    width: 100px;
+    padding: 10px;
+}
+
+.usuario-userProject {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+
+.usuario-userProjectDepartamento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+.usuario-userProjectDepartamento h3, 
+.usuario-userProjectDepartamento h4 {
+    background-color: var(--colorBGOscuro); /* Gris azulado translúcido */
+    color: var(--colorFuenteBlanco);
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin: 0;
+    font-size: 1rem;
+    width: fit-content;
+    font-weight: 400;
+}
+
+
+.usuario-userProject img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid var(--blanco);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-userProject {
+    background-color: var(--colorBGGrisAzulado); /* #3F4951 */
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    gap: 10px;
+}
+
+.footer-userProject h5 {
+    background-color: var(--colorBGOscuro);
+    color: var(--colorFuenteBlanco);
+    flex: 1; /* Hace que los 3 midan lo mismo */
+    text-align: center;
+    margin: 0;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: transform 0.2s;
+}
+
+.footer-userProject h5:hover {
+    transform: translateY(-2px);
+    background-color: var(--colorBGIntermedio);
+}
+
+/*editar-proyectoVista 2 columnas*/
+
+.editar-proyectoVista{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.columna_header{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Layout específico para la vista de edición de proyecto (sin Bootstrap) --- */
+
+.project-top{
+    width: 100%;
+    display: block;
+}
+
+.two-columns{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* columnas ocupan todo el ancho: 50% y 50% */
+    gap: 20px;
+    align-items: start;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.left-column{
+    width: 100%;
+}
+
+.right-column{
+    width: 100%;
+}
+
+.create-task-wrap{
+    margin-bottom: 12px;
+}
+
+.create-task-btn{
+    display: inline-block;
+.tasks-container{
+    width: 100%;
+    max-height: 60vh; /* limita la altura y permite scroll si hay muchas tareas */
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.tasks-container{
+    width: 100%;
+
+/* --- Estilos para listado de tareas (coincidir con estilo de formulario) --- */
+.tasks-container .card{
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 6px 14px rgba(23, 31, 45, 0.04);
+    overflow: hidden;
+    background: var(--blanco, #ffffff);
+}
+
+/* Alternativas de nombres sin Bootstrap (para usar en Blade) */
+.tasks-card{
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 6px 14px rgba(23, 31, 45, 0.04);
+    overflow: hidden;
+    background: var(--blanco, #ffffff);
+}
+
+.tasks-card-header{
+    background: transparent;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.tasks-card-title{
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.tasks-card-body{
+    padding: 8px 12px;
+}
+
+.tasks-table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    min-width: 480px;
+}
+
+.tasks-table thead th{
+    text-align: left;
+    padding: 10px 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.tasks-table tbody td{
+    padding: 10px 8px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    font-size: 0.95rem;
+}
+
+.task-count-badge{
+    display: inline-block;
+    background: rgba(0,0,0,0.04);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.task-badge{
+    padding:6px 8px; border-radius:6px; font-size:0.85rem; display:inline-block;
+}
+
+.tasks-container .card-header{
+    background: transparent;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.tasks-container .card-title{
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.tasks-container .card-body{
+    padding: 8px 12px;
+}
+
+.tasks-container table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    min-width: 480px; /* permite scroll horizontal si es necesario */
+}
+
+.tasks-container table thead th{
+    text-align: left;
+    padding: 10px 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.tasks-container table tbody td{
+    padding: 10px 8px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    font-size: 0.95rem;
+}
+
+.tasks-container table tbody tr:hover{
+    background: rgba(0,0,0,0.02);
+}
+
+.tasks-container .comentarios img{ max-width:20px; }
+
+/* Forzar que la tabla no desborde el contenedor principal: wrapper con scroll horizontal si hace falta */
+.tasks-container{ overflow-x:auto; }
+
+/* Asegurar que los badges/tags encajen mejor */
+.tasks-container .badge{ padding:6px 8px; border-radius:6px; font-size:0.85rem; }
+
+/* pequeño ajuste responsive */
+@media (max-width: 991px){
+    .two-columns{ grid-template-columns: 1fr; }
+    .tasks-container{ max-height: none; }
+}
+    max-height: 60vh; /* limita la altura y permite scroll si hay muchas tareas */
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.comments-container{
+    margin-top: 16px;
+}
+
+
+/*Estilo para Tareas del proyecto*/
+
+/* Estilos para formularios reutilizando la misma estética de proyectos */
+.task-edit-form{
+    background: var(--blanco, #ffffff);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 6px 14px rgba(23,31,45,0.04);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.form-section-title{
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--colorTexto, #232323);
+}
+
+.form-row{ margin-bottom: 12px; display: block; }
+.form-row label{ display:block; margin-bottom:6px; font-weight:600; color:var(--colorTextoSecundario,#444); }
+.form-row input[type="text"], .form-row select, .form-row textarea{ width:100%; padding:8px 10px; border:1px solid rgba(0,0,0,0.08); border-radius:6px; box-sizing:border-box; }
+.form-row textarea{ min-height:90px; }
+
+.two-columns-row{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+
+.form-actions{ margin-top:14px; }
+.btn-primary{ background: var(--colorPrimary, #0d6efd); color:#fff; padding:8px 12px; border-radius:8px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
+.btn-primary i{ margin-right:4px; }
+
+.comments-title{ margin:0 0 10px 0; font-size:1rem; font-weight:600; }
+
+@media (max-width: 991px){
+    .two-columns{ grid-template-columns: 1fr; }
+    .two-columns-row{ grid-template-columns: 1fr; }
+}

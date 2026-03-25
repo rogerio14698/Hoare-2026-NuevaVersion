@@ -1,0 +1,39 @@
+.contenedor_iconos_menu_formulario {
+    float: left;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.icono_menu_formulario {
+    float: left;
+    margin: 0 .5em;
+    cursor: pointer;
+}
+
+.titulo_tipo_contenido {
+    padding-top: .5em;
+}
+
+.segunda_fila {
+    padding-left: 22px;
+}
+
+.verde {
+    color: #00A65A;
+}
+
+.bloque_fila_tabla {
+    padding-left:10px;
+}
+
+.contenedor_imagen_editar {
+    margin-top: 1em;
+}
+
+.label_imagen_editar {
+    margin-top: 1em;
+}
+
+.ordena {
+    cursor:move;
+}

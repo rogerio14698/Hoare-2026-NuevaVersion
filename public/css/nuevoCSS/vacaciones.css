@@ -1,0 +1,29 @@
+@import 'utilities.css';
+@import 'pagination.css';
+
+
+.card-vacaciones{
+    display: block;
+    background-color: var(--colorBGOscuro);
+    padding: 10px;
+    font-size: 1.6rem !important;
+}
+
+.card-vacaciones p{
+    background-color: var(--blanco);
+    font-size: 20px;
+    max-width: fit-content;
+    word-wrap: break-word;
+}
+.vacaciones-titulo{
+    background-color: var(--colorBGOscuro);
+    padding: 20px;
+    color: var(--blanco);
+}
+.vacaciones-titulo h3{
+    color: var(--blanco);
+    width: 70%;
+    font-weight: bold; 
+    text-transform: uppercase;
+    font-size: 1.5rem !important; /* Más pequeño */
+}

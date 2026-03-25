@@ -1,0 +1,11 @@
+
+
+/* Proyecto small background */
+.bg-proyecto{
+    background-color: var(--colorTareaBG);
+}
+
+/* Botones de export (DataTables buttons) */
+.buttons-copy, .buttons-excel, .buttons-csv, .buttons-pdf {
+    background-color: var(--grisOscuro);
+}

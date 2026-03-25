@@ -1,0 +1,174 @@
+@import 'utilities.css';
+@import 'pagination.css';
+
+
+.card-outline{
+    border-top: none !important;
+}
+.calendario-span{
+    color: var(--colorFuenteGris);
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.calendario-titulo h3 {
+    border-bottom: 1px solid var(--colorBGOscuro);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: var(--colorFuenteBlanco);
+    font-size: 1.6rem;
+}
+.calendario-titulo h3 span{
+    color: var(--colorFuenteGris);
+    font-weight: bold; 
+    text-transform: uppercase;
+    font-size: 0.9rem; 
+}
+
+
+.card-calendario{
+    background-color: var(--colorBGOscuro) !important;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+        border: 0 solid rgba(0, 0, 0, 0.125);
+}
+
+/* ==========================
+   Calendario — estilos nuevos
+   - Todas las reglas nuevas deben vivir aquí
+   - Especificidad alta para sobreescribir Bootstrap/FullCalendar cuando haga falta
+   ========================== */
+
+/* Contenedor general del calendario */
+.card-calendario #calendar {
+
+    color: var(--colorFuenteNegro) !important;
+}
+
+/* Encabezados de la semana (nombres de días) - fondo igual al contenedor principal */
+.card-calendario #calendar .fc-day-header,
+.card-calendario #calendar .fc-day-header .fc-col-header-cell-cushion {
+    background-color: var(--colorBGOscuro) !important;
+    color: var(--colorFuenteBlanco) !important;
+    padding: 0.35rem 0.5rem !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+/* Asegurar contraste en el número del día dentro del encabezado */
+.card-calendario #calendar .fc-day-header .fc-day-number {
+    color: var(--colorFuenteBlanco) !important;
+    font-weight: 600 !important;
+}
+
+/* Celdas del calendario: fondo armonizado */
+.card-calendario #calendar .fc-day, .card-calendario #calendar .fc-day-top {
+    background-color: var(--colorBGIntermedio) !important;
+}
+
+/* Pastillas (events) — diseño refinado para evitar solapamientos */
+/*
+  - En vista mes (day-grid) los eventos deben ser bloques apilables.
+  - En vistas agenda/list mantienen estilo compacto pero no se expanden.
+*/
+
+/* Vista mes / grid: apilar eventos y limitar tamaño */
+.card-calendario #calendar .fc-day-grid .fc-event,
+.card-calendario #calendar .fc-day-grid-event {
+    display: block !important;
+    padding: 0.12rem 0.42rem !important; /* compacto */
+    margin: 2px 0 !important; /* separa eventos */
+    border-radius: 0.5rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    box-shadow: none !important; /* quitar sombra para no romper layout */
+    border: 0 !important;
+}
+
+/* Forzar título truncado y color */
+.card-calendario #calendar .fc-day-grid .fc-event .fc-title {
+    color: var(--colorFuenteNegro) !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    vertical-align: middle !important;
+}
+
+/* Vista agenda / week / day: eventos en línea pero compactos */
+.card-calendario #calendar .fc-time-grid .fc-event,
+.card-calendario #calendar .fc-list .fc-event {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.3rem !important;
+    padding: 0.18rem 0.42rem !important;
+    border-radius: 0.375rem !important;
+    font-size: 0.86rem !important;
+}
+
+/* Mapear clases de tareas a FullCalendar (usa variables, no hex) */
+.card-calendario #calendar .fc-event.bgColorEnProceso { background-color: var(--ColorEnProceso) !important; }
+.card-calendario #calendar .fc-event.bgColorPorHacer { background-color: var(--ColorPorHacer) !important; }
+.card-calendario #calendar .fc-event.bgColorEnProduccion { background-color: var(--ColorEnProduccion) !important; }
+.card-calendario #calendar .fc-event.bgColorEnEspera { background-color: var(--ColorEnEspera) !important; }
+.card-calendario #calendar .fc-event.bgColorCliente { background-color: var(--ColorCliente) !important; }
+.card-calendario #calendar .fc-event.bgColorFacturar { background-color: var(--ColorFacturar) !important; }
+.card-calendario #calendar .fc-event.bgColorCerrado { background-color: var(--ColorCerrado) !important; }
+.card-calendario #calendar .fc-event.bgColorRol { background-color: var(--ColorRol) !important; }
+
+/* Forzar color de texto según contraste: si fondo claro usar texto oscuro, si fondo blanco forzar negro */
+.card-calendario #calendar .fc-event.bgColorFacturar { color: var(--colorFuenteNegro) !important; }
+
+/* FullCalendar buttons — estilo acorde a la nueva línea visual */
+.card-calendario .fc-toolbar .fc-button {
+    background-color: transparent;
+    color: var(--colorNav) !important;
+    border: 1px solid var(--colorFuenteNegro) !important;
+    border-radius:0 ;
+    padding: 0.35rem 0.6rem !important;
+    box-shadow: none !important;
+    margin: 0.1em;
+    text-shadow:none;
+    box-shadow: none;
+    font-family: 'Source Sans 3';
+    font-weight: 400;
+}
+
+.card-calendario .fc-toolbar .fc-button:hover,
+.card-calendario .fc-toolbar .fc-button:focus {
+    color: var(--colorFuenteBlanco) !important;
+}
+
+/* Especificidad extra para anular estilos de tablas/Bootstrap si aparecen en el calendario */
+.card-calendario table.table.table-bordered {
+    border: 0 !important;
+}
+.card-calendario .btn-primary,
+.card-calendario .btn-success,
+.card-calendario .label-success {
+    background: transparent !important;
+    border: 0 !important;
+    color: inherit !important;
+}
+
+/* Ajustes responsivos: asegurar que las pastillas no rompan el layout */
+@media (max-width: 768px) {
+    .card-calendario #calendar .fc-event { font-size: 0.82rem !important; padding: 0.2rem 0.45rem !important; }
+}
+
+/* Helpers: si en el Blade seguimos inyectando backgroundColor desde JS (inline styles),
+   preferimos añadir además la clase correspondiente en el objeto event para que este CSS pueda
+   aplicarse sin depender de hex; recomendamos cambiar JS para usar `className` en lugar de
+   backgroundColor. */

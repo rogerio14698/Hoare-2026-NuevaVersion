@@ -1,0 +1,25 @@
+/* Global placeholder - creado para evitar 404 desde @import en main.css */
+
+/* Puedes añadir reglas globales aquí más adelante */
+
+
+/*Alinear Header de las paginas*/
+
+.alinearHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem 0 0 2.625rem;
+    background-color: var(--colorBGClaro);
+}
+
+.separacionBotones{
+    display: flex;
+    gap: 10px;
+}
+
+.alinearCentro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

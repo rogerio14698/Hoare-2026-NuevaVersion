@@ -1,0 +1,66 @@
+@import 'utilities.css';
+@import 'pagination.css';
+
+
+/*Color de fondo*/
+.login-page{
+    background-color: var(--colorBGOscuro) !important;
+}
+
+.login-logo{
+    background-color: var(--colorBGClaro);
+    box-shadow: .5px 3px 3px var(--ColorEnProduccion);
+    border-radius: 5px;
+    padding: 5px
+}
+
+.login-bodybg{
+    background-color: var(--colorBGClaro) !important;
+}
+
+.card-primary {
+    border-top: .5px solid var(--colorBGClaro) !important;
+}
+
+.login-box-msg{
+    text-decoration:underline ;
+    font-weight: bold;
+}
+
+.olvideContraseña a{
+    text-decoration: underline;
+    color: var(--colorFuenteNegro);
+}
+
+.remember label{
+    color: var(--colorFuenteNegro);
+}
+.botonLogin{
+    border: none;
+    background-color: var(--blanco);
+    color: var(--colorFuenteNegro);
+    border-color: var(--grisOscuro);
+    box-shadow: 0px 1px 1px var(--ColorEnProduccion);
+}
+
+.botonLogin:hover{
+    background-color: var(--grisOscuro);
+    color: var(--colorFuenteBlanco);
+    border-color: var(--grisOscuro);
+    box-shadow: 0px 1px 1px var(--ColorEnProduccion);
+}
+
+.btnBlanco{
+    border: none;
+    background-color: var(--blanco);
+    color: var(--colorFuenteNegro);
+    border-color: var(--grisOscuro);
+    box-shadow: 0px 1px 1px var(--ColorEnProduccion);
+}
+
+.btnBlanco:hover{
+    background-color: var(--grisOscuro);
+    color: var(--colorFuenteBlanco);
+    border-color: var(--grisOscuro);
+    box-shadow: 0px 1px 1px var(--ColorEnProduccion);
+}

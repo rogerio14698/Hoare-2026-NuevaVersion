@@ -1,0 +1,37 @@
+/* Variables CSS extracted from colores.css */
+:root {
+    /* Paleta principal */
+    --colorTareaBG: #7B8288;
+    --colorCalendarioBG: #636B72;
+    --colorToDoBG: #6F777D;
+
+    /* Colores estándar */
+    --blanco: #ffffff;
+    --gris: #777777;
+    --grisOscuro: #555555;
+    --negro: #000000;
+
+    /* Color del Navegador */
+    --colorNav: #0F1C26;
+
+
+
+    /* Colores de acciones */
+    --ColorEnProceso: #64FF97;
+    --ColorPorHacer: #688A68;
+    --ColorEnProduccion: #64FFE1;
+    --ColorEnEspera: #9399A3;
+    --ColorCliente: #82A7D9;
+    --ColorFacturar: #ffffff;
+    --ColorCerrado: #666666;
+
+    /* Colores de texto */
+    --colorFuenteBlanco: #ffffff;
+    --colorFuenteGris: #212121;
+    --colorFuenteGrisClaro: #0F1C26;
+    --colorFuenteNegro: #000000;
+
+    /*
+    ClienteAzul -> 
+    */
+}

@@ -1,0 +1,721 @@
+
+/* contenedor con scroll horizontal si hiciera falta */
+.informe-wrap { max-width: 100%; overflow-x: auto; }
+
+/* tabla compacta y columnas fijas */
+#list2 { width: 100%; table-layout: fixed; border-collapse: collapse; }
+#list2 th, #list2 td {
+  padding: 1px 1px !important;
+  font-size: 9px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* encabezado gris */
+#list2 thead th { background: #f2f2f2; }
+
+/* Anchos fijos por colgroup */
+col.col-dia   { width: 13.5%; }
+col.col-hora  { width: 7%; }      /* 11 * 7 = 77% */
+col.col-total { width: 9.5%; }   /* 12.5 + 77 + 10.5 = 100% */
+
+/* Día / Total: que no se rompan y no cambien con filas detalle */
+.col-dia, .col-total { white-space: normal; }
+
+/* Celdas de horas: cero padding para que la barra ocupe 100% exacto */
+#list2 td.celda-hora { padding: 0 !important;  }
+
+/* Estilos específicos para la tabla de fichajes */
+table[border="1"] {
+    border-collapse: collapse !important;
+  
+}
+tbody tr {
+    text-align: left;
+    border-bottom: #4B555C 1px solid !important;
+}
+
+td{
+    border: none !important;
+}
+
+/* Asegurar que los encabezados tengan el estilo correcto */
+table[border="1"] thead th {
+
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 8px !important;
+    color:#4B555C;
+}
+
+table[border="1"] thead th[rowspan="2"] {
+    vertical-align: top !important;
+    padding-top: 8px !important;
+    color:#000;
+}
+
+/* Barra: sin degradados ni imágenes raras, y exactamente del ancho de la celda */
+.barra-tiempo {
+  display: block;
+  width: 100%;
+  height: 10px; /* Reducida de 16px a 12px para columnas más estrechas */
+  margin: 1px 0;
+  background: none !important;
+  background-image: none !important;
+  background-repeat: no-repeat !important;
+  background-size: auto !important;
+  background-position: 0 0 !important;
+  border: 1px solid #ddd;
+}
+
+/* Colores de estado */
+.barra-tiempo.is-vacio  {border-bottom: 4px solid #878E93 !important; }  /* gris */
+.barra-tiempo.is-pasado { border-bottom: 4px solid #64FF97 !important; }  /* verde */
+.barra-tiempo.is-ahora  { border-bottom: 4px solid #878E93 !important; }  /* gris */
+
+/* Tabla compacta para pantallas más pequeñas */
+table[border="1"] {
+    font-size: 9px !important;
+}
+
+table[border="1"] th,
+table[border="1"] td {
+    padding: 2px 1px !important;
+    font-size: 9px !important;
+    line-height: 1.1 !important;
+}
+
+/* Celdas de horas más compactas */
+.celda-hora {
+    padding: 0px !important;
+    vertical-align: middle !important;
+}
+
+/* Control de desbordamiento para columnas Día y Total */
+table[border="1"] .col-dia {
+    width: 20% !important;
+    min-width: 90px !important; /* Mínimo para que quepa "Miércoles" */
+    max-width: 0 !important;
+    color:#fff;
+}
+
+table[border="1"] .col-total {
+    width: 32% !important;
+    min-width: 50px !important; /* Mínimo para "00:00" */
+    word-wrap: break-word !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    max-width: 0 !important;
+}
+
+/* Para las celdas de datos (no headers) - FORZAR NO PARTIR */
+table[border="1"] tbody .col-dia {
+    font-size: 0.625rem !important;
+    line-height: 1.2 !important;
+}
+table, th{
+    border:none;
+}
+/*color del simbolo + para desplegar horario ya fichado*/
+.btn i, .btn .fa, .btn .fas, .btn .far {
+    font-size: 0.65rem !important;
+    color: #fff;
+}
+
+table[border="1"] tbody .col-total {
+    font-size: 0.625rem !important;
+    font-weight: bold !important;
+}
+
+/* Solo rayar filas "principales" (las de cada día). Elimina rayado automático general */
+#list2 tbody tr.fila-dia:nth-of-type(odd) > td { background-color: #f9f9f9; }
+#list2 tbody tr.fila-dia:nth-of-type(even) > td { background-color: #ffffff; }
+
+/* Las filas de detalle no se rayan y ocupan todo en blanco */
+#list2 tbody tr.fila-detalle > td { background-color: #ffffff !important; }
+
+/* quitar paddings que empujan el ancho total */
+#contentToPrint .box-body { padding-left: 0; padding-right: 0; }
+
+
+
+/* ======= CSS ESPECÍFICO PARA QUE EL PDF SEA EXACTAMENTE IGUAL A LA PANTALLA ======= */
+/* VERSION 2.0 - OPTIMIZADO PARA PDF VERTICAL CON CÍRCULOS DE COLORES */
+
+/* === ESTILOS PARA PANTALLA (igual que siempre) === */
+.informe-wrap {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+#list2 {
+    width: 100%;
+    border-collapse: collapse !important;
+    table-layout: fixed;
+}
+
+#list2 th,
+#list2 td {
+    border: none !important;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px 2px;
+    font-size: 11px;
+}
+
+#list2 thead th {
+    background: #F2F2F2 !important;
+    font-weight: bold;
+}
+
+.col-dia { width: 12.5%; }
+.col-hora { width: 7%; }
+.col-total { width: 10.5%; }
+
+.celda-hora {
+    padding: 0 !important;
+    background: #fff !important;
+}
+
+.barra-tiempo {
+    display: block;
+    width: 100%;
+    height: 20px;
+    margin: 2px 0;
+    border:none;
+}
+
+.barra-tiempo.is-vacio {
+    background-color: #FFFFFF;
+}
+
+.barra-tiempo.is-pasado {
+    background-color: #008D4C;
+}
+
+.barra-tiempo.is-ahora {
+    background-color: #00C0EF;
+}
+
+.fila-dia:nth-of-type(odd) > td {
+    background-color: #f9f9f9;
+}
+
+.fila-dia:nth-of-type(even) > td {
+    background-color: #ffffff;
+}
+
+.fila-detalle > td {
+    background-color: #ffffff;
+}
+
+/* ===== REGLAS ESPECÍFICAS SOLO PARA IMPRESIÓN PDF ===== */
+@media print {
+    /* CONFIGURACIÓN GLOBAL PARA FORZAR COLORES EN PDF */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    /* Configuración básica de página VERTICAL */
+    @page {
+        size: A4 portrait !important;
+        margin: 15mm !important;
+    }
+    
+    /* FORZAR TODOS LOS COLORES */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    /* Resetear body y html */
+    html, body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        line-height: 1.42857143 !important;
+        color: #333 !important;
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Contenedor principal */
+    #contentToPrint {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    /* === CABECERA EXACTA COMO DESCRIBES === */
+    #contentToPrint .col-lg-12 {
+        width: 100% !important;
+        display: block !important;
+        float: left !important;
+        clear: both !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* PRIMERA FILA: Logo + Info empresa/trabajador */
+    #contentToPrint > .col-lg-12:first-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 2px !important; /* MUY PEGADA AL AÑO */
+        border-bottom: 2px solid #ccc !important; /* LÍNEA GRIS EXACTA COMO INFORME HORAS */
+    }
+    
+    /* COLUMNA 1: Logo (IZQUIERDA) */
+    #contentToPrint .col-lg-3 {
+        width: 30% !important;
+        float: left !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        display: block !important;
+    }
+    
+    /* COLUMNA 2: Info empresa/trabajador (DERECHA) */
+    #contentToPrint .col-lg-5 {
+        width: 70% !important;
+        float: right !important;
+        padding: 0 0 0 20px !important;
+        box-sizing: border-box !important;
+        display: block !important;
+    }
+    
+    /* COLUMNA 3: Mes/Año (DEBAJO DEL LOGO A LA IZQUIERDA) */
+    #contentToPrint .col-lg-4 {
+        width: 30% !important;
+        float: left !important;
+        padding: 2px 0 0 0 !important; /* MUY PEGADO AL LOGO */
+        box-sizing: border-box !important;
+        display: block !important;
+        clear: left !important;
+    }
+    
+    /* Logo exacto */
+    #contentToPrint img {
+        width: 200px !important;
+        height: auto !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin: 0 0 10px 0 !important;
+        max-width: 100% !important;
+    }
+    
+    /* Información de la empresa - A LA DERECHA */
+    #contentToPrint .col-lg-5 .col-lg-12 {
+        width: 100% !important;
+        margin: 0 0 15px 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        float: none !important;
+        clear: none !important;
+    }
+    
+    #contentToPrint .form-group.col-lg-12 {
+        width: 100% !important;
+        margin: 0 0 10px 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        color: #333 !important;
+        float: none !important;
+    }
+    
+    #contentToPrint .form-group strong {
+        font-weight: bold !important;
+        color: #333 !important;
+    }
+    
+    /* Mes/Año - TIPOGRAFÍA MÁS PEQUEÑA COMO EN INFORME HORAS */
+    #contentToPrint .col-lg-4 .col-lg-12:first-child {
+        /* Sin espacio en blanco */
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: none !important; /* Ocultar el &nbsp; */
+    }
+    
+    #contentToPrint .col-lg-4 .col-lg-12:nth-child(2),
+    #contentToPrint .col-lg-4 .col-lg-12:nth-child(3) {
+        width: 100% !important;
+        margin: 0 0 2px 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        font-size: 12px !important; /* MÁS PEQUEÑA */
+        line-height: 1.2 !important;
+        color: #333 !important;
+        float: none !important;
+        font-weight: normal !important;
+    }
+    
+    #contentToPrint .col-lg-4 .col-lg-12:nth-child(3) {
+        margin-bottom: 0 !important;
+    }
+    
+    /* === SECCIÓN DE LA TABLA === */
+    #contentToPrint .box {
+        width: 100% !important;
+        display: block !important;
+        margin: 4px 0 0 0 !important; /* UN PELÍN MÁS DE SEPARACIÓN */
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        clear: both !important;
+    }
+    
+    #contentToPrint .box-body {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    #contentToPrint .informe-wrap {
+        width: 100% !important;
+        overflow: visible !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+    
+    /* === TABLA OPTIMIZADA PARA PDF VERTICAL === */
+    #contentToPrint #list2,
+    #contentToPrint table {
+        width: 100% !important;
+        table-layout: fixed !important;
+        border-collapse: collapse !important;
+        border: 1px solid #ddd !important;
+        font-size: 9px !important;
+        margin: 0 !important;
+        display: table !important;
+        page-break-inside: auto !important;
+    }
+    
+    #contentToPrint #list2 thead {
+        display: table-header-group !important;
+    }
+    
+    #contentToPrint #list2 tbody {
+        display: table-row-group !important;
+    }
+    
+    #contentToPrint #list2 tr {
+        display: table-row !important;
+        page-break-inside: avoid !important;
+    }
+    
+    #contentToPrint #list2 th,
+    #contentToPrint #list2 td {
+        display: table-cell !important;
+        border: 1px solid #ddd !important;
+        padding: 1px !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        font-size: 8px !important;
+        line-height: 1.1 !important;
+        word-wrap: break-word !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Encabezados de tabla grises */
+    #contentToPrint #list2 thead th,
+    #contentToPrint #list2 th {
+        background: #F2F2F2 !important;
+        font-weight: bold !important;
+        color: #333 !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    /* Columnas más ajustadas para vertical */
+    #contentToPrint colgroup .col-dia {
+        width: 12% !important;
+    }
+    
+    #contentToPrint colgroup .col-hora {
+        width: 6.5% !important;
+    }
+    
+    #contentToPrint colgroup .col-total {
+        width: 11% !important;
+    }
+    
+    /* === TODAS LAS CELDAS CON CONTENIDO DINÁMICO === */
+    #contentToPrint td {
+        padding: 1px !important;
+        height: auto !important;
+        min-height: 15px !important;
+        vertical-align: top !important;
+        line-height: 1.1 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+    }
+    
+    /* Celdas con barras de tiempo - ALTURA AUTOMÁTICA MEJORADA */
+    #contentToPrint .celda-hora,
+    #contentToPrint td.celda-hora {
+        padding: 1px !important;
+        background: #fff !important;
+        margin: 0 !important;
+        height: auto !important;
+        max-height: none !important;
+        min-height: 15px !important;
+        vertical-align: top !important;
+        line-height: 1.1 !important;
+        overflow: visible !important;
+        word-break: break-word !important;
+    }
+    
+    /* Barras de tiempo más pequeñas para vertical */
+    #contentToPrint .barra-tiempo {
+        display: block !important;
+        width: 100% !important;
+        height: 12px !important;
+        margin: 1px 0 !important;
+        border-radius: 2px !important;
+        border: 1px solid #ccc !important;
+        box-sizing: border-box !important;
+    }
+    
+    #contentToPrint .barra-tiempo.is-vacio {
+        background-color: #FFFFFF !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    #contentToPrint .barra-tiempo.is-pasado {
+        background-color: #008D4C !important;
+        border: 1px solid #008D4C !important;
+    }
+    
+    #contentToPrint .barra-tiempo.is-ahora {
+        background-color: #00C0EF !important;
+        border: 1px solid #00C0EF !important;
+    }
+    
+    /* === CÍRCULOS TAMAÑO ORIGINAL Y COLORES FORZADOS === */
+    #contentToPrint .fa-circle,
+    #contentToPrint i.fa-circle,
+    #contentToPrint span.fa-circle {
+        display: inline !important;
+        font-size: 8px !important;
+        visibility: visible !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        opacity: 1 !important;
+        line-height: 1 !important;
+    }
+    
+    /* MÉTODO AGRESIVO: Forzar colores por clases específicas */
+    #contentToPrint .text-success,
+    #contentToPrint .text-success *,
+    #contentToPrint .text-success .fa-circle,
+    #contentToPrint .fa-circle.text-success {
+        color: #008D4C !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    #contentToPrint .text-danger,
+    #contentToPrint .text-danger *,
+    #contentToPrint .text-danger .fa-circle,
+    #contentToPrint .fa-circle.text-danger {
+        color: #D73925 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* MÉTODO DIRECTO: Por contenido HTML específico */
+    #contentToPrint i[class*="fa-circle"],
+    #contentToPrint span[class*="fa-circle"] {
+        color: inherit !important;
+    }
+    
+    /* ÚLTIMA OPCIÓN: Si nada funciona, usar ::before para inyectar colores */
+    #contentToPrint .text-success .fa-circle::before {
+        color: #008D4C !important;
+    }
+    
+    #contentToPrint .text-danger .fa-circle::before {
+        color: #D73925 !important;
+    }
+    
+    /* Filas alternas */
+    #contentToPrint tbody tr.fila-dia:nth-of-type(odd) > td {
+        background-color: #f9f9f9 !important;
+    }
+    
+    #contentToPrint tbody tr.fila-dia:nth-of-type(even) > td {
+        background-color: #ffffff !important;
+    }
+    
+    #contentToPrint tbody tr.fila-detalle > td {
+        background-color: #ffffff !important;
+    }
+    
+    /* Texto final */
+    #contentToPrint p {
+        font-size: 12px !important;
+        margin: 15px 0 0 0 !important;
+        color: #333 !important;
+        display: block !important;
+        clear: both !important;
+    }
+    
+    /* Ocultar elementos innecesarios */
+    .no-print,
+    .modal,
+    .btn:not(.btn-print),
+    .pagination,
+    .tooltip,
+    .dropdown-menu,
+    .navbar,
+    .sidebar {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Clearfix para la cabecera completa */
+    #contentToPrint > .col-lg-12:first-child:after {
+        content: "" !important;
+        display: table !important;
+        clear: both !important;
+        width: 100% !important;
+        height: 0 !important;
+    }
+    
+    /* Separación EXACTA entre cabecera y tabla - IGUAL QUE INFORME HORAS */
+    #contentToPrint > .col-lg-12:nth-child(2) {
+        margin-top: 5px !important;
+        clear: both !important;
+        float: left !important;
+        width: 100% !important;
+    }
+    
+    /* === REGLAS SUPER AGRESIVAS PARA CÍRCULOS SIMPLIFICADAS === */
+    #contentToPrint i.fa-circle,
+    #contentToPrint span.fa-circle,
+    #contentToPrint .fa.fa-circle {
+        font-size: 8px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* ESTRATEGIA DEFINITIVA: CÍRCULOS CON BORDES DE COLOR */
+    #contentToPrint td .text-success i.fa-circle,
+    #contentToPrint td .text-success .fa-circle,
+    #contentToPrint .text-success i.fa-circle,
+    #contentToPrint .text-success .fa-circle {
+        font-size: 0 !important; /* OCULTAR EL ICONO ORIGINAL */
+        width: 8px !important;
+        height: 8px !important;
+        border: 2px solid #008D4C !important;
+        border-radius: 50% !important;
+        background-color: #008D4C !important;
+        display: inline-block !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    #contentToPrint td .text-success i.fa-circle:before,
+    #contentToPrint td .text-success .fa-circle:before,
+    #contentToPrint .text-success i.fa-circle:before,
+    #contentToPrint .text-success .fa-circle:before {
+        content: "" !important; /* ELIMINAR CONTENIDO */
+    }
+    
+    #contentToPrint td .text-danger i.fa-circle,
+    #contentToPrint td .text-danger .fa-circle,
+    #contentToPrint .text-danger i.fa-circle,
+    #contentToPrint .text-danger .fa-circle {
+        font-size: 0 !important; /* OCULTAR EL ICONO ORIGINAL */
+        width: 8px !important;
+        height: 8px !important;
+        border: 2px solid #D73925 !important;
+        border-radius: 50% !important;
+        background-color: #D73925 !important;
+        display: inline-block !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    #contentToPrint td .text-danger i.fa-circle:before,
+    #contentToPrint td .text-danger .fa-circle:before,
+    #contentToPrint .text-danger i.fa-circle:before,
+    #contentToPrint .text-danger .fa-circle:before {
+        content: "" !important; /* ELIMINAR CONTENIDO */
+    }
+    
+    /* Forzar colores simples y directos */
+    #contentToPrint .text-success {
+        color: #008D4C !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    #contentToPrint .text-danger {
+        color: #D73925 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* =================================================== */
+/* MEDIA QUERIES PARA RESPONSIVE - DEVTOOLS SUPPORT  */
+/* =================================================== */
+
+/* Media query para viewport estrecho (DevTools abierto) */
+@media (max-width: 1400px) {
+    table[border="1"] .col-dia {
+        width: 18% !important;
+        min-width: 55px !important;
+        font-size: 10px !important;
+    }
+    
+    table[border="1"] .col-total {
+        width: 28% !important;
+        min-width: 45px !important;
+        font-size: 10px !important;
+    }
+    
+    /* Reducir las horas para dar espacio */
+    table[border="1"] .col-hora {
+        width: 4.2% !important;
+        min-width: 30px !important;
+        font-size: 9px !important;
+        padding: 1px !important;
+    }
+}
+
+/* Para viewports muy estrechos */
+@media (max-width: 1200px) {
+    table[border="1"] .col-dia {
+        width: 16% !important;
+        min-width: 50px !important;
+        font-size: 9px !important;
+    }
+    
+    table[border="1"] .col-total {
+        width: 25% !important;
+        min-width: 40px !important;
+        font-size: 9px !important;
+    }
+    
+    table[border="1"] .col-hora {
+        width: 4% !important;
+        min-width: 28px !important;
+        font-size: 8px !important;
+        padding: 0px !important;
+    }
+}

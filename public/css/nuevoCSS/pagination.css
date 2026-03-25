@@ -1,0 +1,92 @@
+/* DataTables info and pagination overrides */
+.dataTables_info{
+    color: var(--colorFuenteNegro);
+}
+.dataTables_info ul li{
+    color: var(--colorFuenteNegro);
+}
+
+.page-item .page-link {
+    background-color: var(--colorTareaBG) !important;
+    color: var(--colorFuenteNegro) !important;
+    border-color: var(--grisOscuro) !important;
+}
+
+/* Hover/focus for pagination links */
+.page-item:hover .page-link,
+.page-item .page-link:hover,
+.page-item .page-link:focus {
+    background-color: var(--gris) !important;
+    color: var(--colorFuenteNegro) !important;
+    border-color: var(--grisOscuro) !important;
+    cursor: pointer;
+}
+
+/* More specific selectors to override AdminLTE/DataTables defaults */
+.dataTables_wrapper .dataTables_paginate .pagination .page-item .page-link {
+    background-color: var(--colorTareaBG) !important;
+    color: var(--colorFuenteNegro) !important;
+    border-color: var(--grisOscuro) !important;
+}
+.dataTables_wrapper .dataTables_paginate .pagination .page-item.disabled .page-link {
+    background-color: var(--colorTareaBG) !important;
+    color: var(--colorFuenteNegro) !important;
+    border-color: var(--grisOscuro) !important;
+    opacity: 1 !important;
+}
+.dataTables_wrapper .dataTables_paginate .pagination .page-item.active .page-link {
+    background-color: var(--gris) !important;
+    color: var(--colorFuenteBlanco) !important;
+    border-color: var(--grisOscuro) !important;
+}
+
+/* Fin de estilos de paginación */
+
+/* pagination.css */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+/* Estilo base para todos los elementos (enlaces y spans) */
+.pagination .page-item a, 
+.pagination .page-item span {
+    display: inline-block;
+    padding: 8px 14px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #e0e4e8;
+    border-radius: 4px;
+    color: var(--grisAzulado, #4e5d6c);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Estado: Hover (solo para los que son links) */
+.pagination .page-item a:hover {
+    background-color: #f8f9fa;
+    border-color: var(--grisAzulado);
+    color: #2c3e50;
+}
+
+/* Estado: Activo (La página donde estás) */
+.pagination .page-item.active span {
+    background-color: var(--grisAzulado, #4e5d6c);
+    color: #ffffff;
+    border-color: var(--grisAzulado);
+    cursor: default;
+}
+
+/* Estado: Deshabilitado (Anterior/Siguiente sin uso) */
+.pagination .page-item.disabled span {
+    color: #bdc3c7;
+    background-color: #f9f9f9;
+    border-color: #eee;
+    cursor: not-allowed;
+}

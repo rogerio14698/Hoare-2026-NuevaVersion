@@ -1,0 +1,223 @@
+@import 'nuevoCSS/main.css';
+
+.comentarios, .tareas, .proyectos{
+    cursor: pointer;
+}
+
+/* Estilos para labels con colores AdminLTE */
+.label { 
+    display: inline-block !important; 
+    padding: .2em .6em .3em !important; 
+    font-size: 75% !important; 
+    font-weight: bold !important; 
+    line-height: 1 !important; 
+    color: #fff !important; 
+    text-align: center !important; 
+    white-space: nowrap !important; 
+    vertical-align: baseline !important; 
+    border-radius: .25em !important; 
+    background-color: #777 !important; /* Default gray */
+}
+
+/* Colores AdminLTE para labels - máxima especificidad */
+.label.bg-red, 
+.sidebar-menu .label.bg-red,
+.main-sidebar .sidebar-menu .label.bg-red { 
+    background-color: #dd4b39 !important; 
+    color: #fff !important;
+}
+
+.label.bg-green,
+.sidebar-menu .label.bg-green,
+.main-sidebar .sidebar-menu .label.bg-green { 
+    background-color: #00a65a !important; 
+    color: #fff !important;
+}
+
+.label.bg-yellow,
+.sidebar-menu .label.bg-yellow,
+.main-sidebar .sidebar-menu .label.bg-yellow { 
+    background-color: #f39c12 !important; 
+    color: #000 !important;
+}
+
+.label.bg-blue,
+.sidebar-menu .label.bg-blue,
+.main-sidebar .sidebar-menu .label.bg-blue { 
+    background-color: #3c8dbc !important; 
+    color: #fff !important;
+}
+
+.label.bg-purple,
+.sidebar-menu .label.bg-purple,
+.main-sidebar .sidebar-menu .label.bg-purple { 
+    background-color: #605ca8 !important; 
+    color: #fff !important;
+}
+
+.label.bg-aqua,
+.sidebar-menu .label.bg-aqua,
+.main-sidebar .sidebar-menu .label.bg-aqua { 
+    background-color: #00c0ef !important; 
+    color: #fff !important;
+}
+
+.label.bg-orange,
+.sidebar-menu .label.bg-orange,
+.main-sidebar .sidebar-menu .label.bg-orange { 
+    background-color: #ff851b !important; 
+    color: #fff !important;
+}
+
+.label.bg-gray,
+.sidebar-menu .label.bg-gray,
+.main-sidebar .sidebar-menu .label.bg-gray { 
+    background-color: #777 !important; 
+    color: #fff !important;
+}
+
+.label.bg-black,
+.sidebar-menu .label.bg-black,
+.main-sidebar .sidebar-menu .label.bg-black { 
+    background-color: #111 !important; 
+    color: #fff !important;
+}
+
+/* Estilos específicos para labels en el menú sidebar */
+.sidebar-menu .label {
+    font-size: 10px !important;
+    font-weight: normal !important;
+    padding: 2px 5px !important;
+    margin-left: 5px !important;
+}
+main{
+    background-image: url(../images/footer.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+header h1{
+    float: left;
+}
+header .logo-image{
+    height: 31px;
+    float: left;
+    margin-left: 1em;
+}
+@media print {
+    body { font-size: 14pt }
+
+    .content-header {
+        display: none;
+    }
+    .main-header {
+
+        display: none;
+    }
+    aside{
+        display: none;
+    }
+    .dt-buttons, .btn{display: none;}
+    tfoot{display: none;}
+    .noprint{display: none;}
+    .dataTables_info, .dataTables_paginate{
+        display: none;
+    }
+}
+/*Contenido que he ido metiendo aqui ya que no sabia donde meterlo- Contenido que antes estaba suelto en los archivos
+/* Solo borde exterior en el contenedor del calendario del dashboard */
+    #calendar .fc-view-container {
+      border: 0.5px solid #ddd !important;
+    }
+
+/* Reglas móviles generales (las del dashboard están en dashboard.css) */
+@media (max-width: 992px) {
+    /* Mantener visible el navegador superior en móvil */
+    .main-header,
+    .menu-header {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* Ocultar sidebar lateral para priorizar contenido móvil */
+    .main-sidebar,
+    .control-sidebar {
+        display: none !important;
+    }
+
+    .content-wrapper,
+    .main-footer {
+        margin-left: 0 !important;
+    }
+}
+
+.espaciado-fila{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem ;
+}
+
+/*Aqui va el include de la nueva  web*/
+
+
+/* Variables-driven overrides to apply nuevoCSS color palette to dashboard elements */
+/* Dashboard container */
+.contenedor-dashboard {
+    background-color: var(--blanco);
+    color: var(--colorFuenteGris);
+}
+
+/* Fichaje card */
+.fichaje-card {
+    background-color: var(--colorToDoBG) !important;
+    color: var(--colorFuenteBlanco) !important;
+}
+
+
+
+#calendar .fc-view-container {
+    background-color: var(--colorCalendarioBG) !important;
+    color: var(--colorFuenteBlanco) !important;
+}
+
+/* Tareas column */
+.bg-tareas-col {
+    background-color: var(--colorTareaBG) !important;
+    color: var(--colorFuenteBlanco) !important;
+}
+
+/* Utility: apply nav color to top navigation elements */
+.text-nav, .main-header .navbar, .navbar-nav > li > a {
+    color: var(--colorNav) !important;
+}
+/*Código para sobreescribir estilos; nuevoCSS ese directorio no está funcionando*/
+
+/*quitar padding al contenedor principal */
+.content-wrapper > .content {
+    padding: 0;
+}
+
+#content{
+    background-color: var(--colorBGClaro);
+    height: 100vh;
+    min-height: 100vh;
+}
+.card{
+    border:none !important;
+    box-shadow: none !important;
+}
+.table-bordered {
+    border: none!important;
+}
+
+th, td, tr{
+    border:none!important;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color:transparent !important;
+
+}
+#content td{
+    border-bottom: #000 1px solid !important;
+    padding: 0;;
+
+}

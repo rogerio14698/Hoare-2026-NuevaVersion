@@ -1,0 +1,39 @@
+
+@import 'global.css';
+@import 'variables.css';
+@import 'badges.css';
+@import 'utilities.css';
+@import 'colores.css';
+@import 'pagination.css';
+@import 'loginEstilo.css';
+@import 'usuarios.css';
+@import 'botones.css';
+@import 'menu-horizontal.css';
+@import 'formulario.css';
+@import 'medias.css';
+@import 'main.css';
+@import 'fuente.css';
+
+
+
+
+/*to do list*/
+@import 'toDoList.css';
+@import 'tareas.css';
+@import 'fichajes.css';
+@import 'calendario.css';
+@import 'newFeed.css';
+@import 'vacaciones.css';
+@import 'user_project.css';
+@import 'editarTareas.css';
+@import 'modificarFichaje.css';
+
+/*Dashboard*/
+@import 'dashboard.css';
+
+
+body{
+background-color: var(--colorBGClaro);
+font-size: 16px;
+font-family: var(--fuente-principal);
+}

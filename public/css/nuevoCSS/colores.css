@@ -1,0 +1,313 @@
+:root {
+    /* Paleta principal */
+    --colorBGClaro: #7B8288;
+    --colorBGOscuro: #636b72d5;
+    --colorBGIntermedio: #6F777D;
+    --colorBGGrisAzulado: #3F4951;
+    --colorBGContador: #d8d8d8;
+    --colorMenu:#808080;
+    /* Colores estándar */
+    --blanco: #ffffff;
+    --gris: #777777;
+    --grisOscuro: #555555;
+    --negro: #000000;
+    --grisAzulado: #2c343b;
+    --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Color del Navegador */
+    --colorNav: #0F1C26;
+    /*Color header user edit-project*/
+    --colorUser: #d1d6ff;
+    /*Bg de la web*/
+    --colorBgWeb: #64688f;
+
+    /*Sombra*/
+    --sombra:#2c343b;
+
+    /*líneas de separación */
+    --bordes:#4B555C;
+    /* Colores de acciones */
+    --ColorEnProceso: #64FF97;
+    --ColorPorHacer: #688A68;
+    --ColorEnProduccion: #64FFE1;
+    --ColorEnEspera: #9399A3;
+    --ColorCliente: #82A7D9;
+    --ColorFacturar: #ffffff;
+    --ColorCerrado: #666666;
+    --ColorRol: #02b2f8;
+
+    /* Colores de texto */
+    --colorFuenteBlanco: #ffffff;
+    --colorFuenteGris: rgb(15, 28, 38);
+    --colorFuenteGrisClaro: #CCCCCC;
+    --colorFuenteNegro: #000000;
+
+    /*
+    ClienteAzul -> 
+    */
+
+    
+}
+/*VER COMO APLICAR EL ROOT A ESTO AUN */
+/* Mapeo de colores directo en CSS */
+.tarea-estado.verde h5, .tarea-estado.success h5, .tarea-estado.green h5 { background-color: #7dff9b; }
+.tarea-estado.azul h5, .tarea-estado.primary h5, .tarea-estado.blue h5, .tarea-estado.cliente h5 { background-color: #8fbdfa; }
+.tarea-estado.rojo h5, .tarea-estado.danger h5, .tarea-estado.red h5 { background-color: #ff7d7d; }
+.tarea-estado.amarillo h5, .tarea-estado.warning h5, .tarea-estado.orange h5 { background-color: #ffeb7d; }
+.tarea-estado.gris h5, .tarea-estado.default h5, .tarea-estado.gray h5 { background-color: #8a9499; }
+
+
+
+
+
+
+/*BG de las etiquitas de producción*/
+.bgColorEnProceso {
+    background-color: var(--ColorEnProceso);
+    font-weight: bold;
+}
+.bgColorPorHacer {
+    background-color: var(--ColorPorHacer);
+    font-weight: bold;
+}
+.bgColorEnProduccion {
+    background-color: var(--ColorEnProduccion);
+    font-weight: bold;
+}
+.bgColorEnEspera {
+    background-color: var(--ColorEnEspera);
+    font-weight: bold;
+}
+.bgColorCliente {
+    background-color: var(--ColorCliente);
+    font-weight: bold;
+}
+.bgColorFacturar {
+    background-color: var(--ColorFacturar);
+    font-weight: bold;
+}
+.bgColorCerrado {
+    background-color: var(--ColorCerrado);
+    font-weight: bold;
+}
+.bgColorBody{
+    background-color: var(--colorFuenteGris);
+}
+.bg-tarea {
+    background-color: var(--colorBGClaro) ;
+    color: var(--colorFuenteBlanco) ;
+}
+
+.bg-grisOscuro {
+    background-color: var(--colorBGOscuro);
+    color: var(--colorFuenteBlanco) ;
+}
+
+.bg-todo {
+    background-color: var(--colorBGIntermedio) ;
+    color: var(--colorFuenteBlanco) ;
+}
+.bg-Rol{
+    background-color: var(--ColorRol) ;
+    color: var(--colorFuenteBlanco) ;
+    margin: 1px;
+}
+
+/* Ejemplos de clases utilitarias que usan las variables */
+.bold{
+    font-weight: bold;
+    font-size: 20px;
+}
+/* Agrupadas: reglas relacionadas con "fuente" ordenadas por longitud del selector (menos primero) */
+
+.fuenteTitulo{
+    color: var(--colorFuenteBlanco);
+    font-weight: bold;
+    font-size: 1.5rem;
+
+}
+.fuenteTituloBlanco{
+    color: var(--colorFuenteBlanco);
+    font-size: 1.5rem;
+
+}
+.fuente-gris{
+    color:var(--colorFuenteGris)
+}
+.fuente-gris{
+    color: var(--colorFuenteGris);
+    font-size: 1rem ;
+    text-decoration: underline;
+}
+.fuente-negro{
+    color: var(--colorFuenteNegro);
+    font-weight: bold;
+    font-size: 1.09rem;
+}
+.fuente-blanco{
+    color:var(--colorFuenteBlanco);
+    font-weight: 600;
+}
+.fuenteGrisClaro{
+    color: var(--colorFuenteGrisClaro);
+    font-size: 1.1rem !important;
+    /* text-decoration: underline; */
+    /* font-weight: bold; */
+}
+.fuente-grisClaro{
+    color: var(--colorFuenteGrisClaro);
+    font-size: 1rem ;
+}
+.fuenteFechaNegro{
+    color:var(--colorFuenteGrisClaro);
+    font-weight: bold;
+    font-size: 1.06rem;
+    text-decoration: underline;
+}
+.fuente-blancoBold{
+    color:var(--colorFuenteBlanco);
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+.fuente-gris-claro{
+    color:var(--colorFuenteGrisClaro)
+}
+.fuenteNombresGris{
+    color: var(--colorFuenteGris);
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+.fuenteNombresBlanco{
+    color: var(--colorFuenteBlanco);
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+.fuenteEmailGrisClaro{
+    color: var(--colorFuenteGrisClaro);
+    font-size: 1.05rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.fuenteNombresGrisClaro{
+    color: var(--colorFuenteGrisClaro);
+    font-size: 1.05rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+
+
+
+/*Fin de las fuentes*/
+.dataTables_length{
+    color:var(--colorFuenteNegro);
+}
+
+/*Esto es la parte inferior donde se muestra para cambiar de paginas
+y la cantidad de tablas que se generaron
+Como es json lo hago aqui para sobreescribirlo*/
+
+.dataTables_info{
+    color: var(--colorFuenteNegro);
+}
+.dataTables_info ul li{
+    color: var(--colorFuenteNegro);
+}
+
+.page-item.disabled .page-link  {
+    background-color: var(--colorBGClaro);
+    color: var(--colorFuenteNegro);
+    border-color: var(--grisOscuro);
+    cursor: pointer;
+    
+}
+.page-item .page-link {
+    background-color: var(--colorBGClaro);
+    color: var(--colorFuenteNegro);
+    border-color: var(--grisOscuro);
+}
+
+/* Hover/focus for pagination links */
+.page-item:hover .page-link,
+.page-item .page-link:hover,
+.page-item .page-link:focus {
+    background-color: var(--gris);
+    color: var(--colorFuenteNegro);
+    border-color: var(--grisOscuro);
+    cursor: pointer;
+}
+
+/* More specific selectors to override AdminLTE/DataTables defaults */
+.dataTables_wrapper .dataTables_paginate .pagination .page-item .page-link {
+    background-color: var(--colorBGClaro);
+    color: var(--colorFuenteNegro);
+    border-color: var(--grisOscuro);
+}
+.dataTables_wrapper .dataTables_paginate .pagination .page-item.disabled .page-link {
+    background-color: var(--colorBGClaro);
+    color: var(--colorFuenteNegro);
+    border-color: var(--grisOscuro);
+    opacity: 1;
+}
+.dataTables_wrapper .dataTables_paginate .pagination .page-item.active .page-link {
+    background-color: var(--gris) ;
+    color: var(--colorFuenteBlanco) ;
+    border-color: var(--grisOscuro) ;
+}
+/*Fin de estilos de cambiar de paginas de TAREAS*/
+
+/*Inicio de Listado de proyectos*/
+.bg-proyecto{
+    background-color: var(--colorBGClaro);
+}
+/*Colores para el pequeño nav que esta al principio*/
+
+.buttons-copy, .buttons-excel, .buttons-csv, .buttons-pdf {
+    background-color: var(--grisOscuro);
+}
+
+.text-sm .btn {
+    font-size: 1.02rem ;
+}
+
+.telefonoGris{
+    color: var(--colorFuenteGris);
+    font-size: 1.04rem;
+    font-weight: bold;
+}
+
+/*Cliente*/
+.bgCliente{
+    background-color: var(--colorBGClaro);
+}
+
+/*Usuario*/
+.bgUsuario{
+    background-color: var(--colorBGIntermedio) !important;
+}
+    /*Formulario*/
+.labelFormBlanco label{
+    color: var(--colorFuenteNegro)!important;
+    font-size: 1.05rem;
+    font-weight: bold !important;
+    text-decoration: underline;
+}
+
+/*Varios Sobrescribis Boostrap*/
+
+.text-nav {
+    color: var(--colorNav);
+}
+
+.text-gris {
+    color: var(--gris);
+}
+
+/*Pruebas*/
+
+.bgWeb{
+    background-color: var(--colorBGClaro);
+}

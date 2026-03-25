@@ -1,0 +1,33 @@
+@import 'utilities.css';
+@import 'pagination.css';
+
+/*Editar Usuario*/
+.tituloUsuario{
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--colorFuenteNegro);
+   
+}
+
+.bgEditarUsuario{
+    background-color: var(--colorBGIntermedio) !important;
+}
+
+/*Esto modifica las etiquetas de los roles dentro de los label
+ya que la clase select2 genera sus propios estilos */
+.select2-selection__choice{
+    background-color: var(--ColorRol) !important;
+    color: var(--colorFuenteBlanco) !important;
+}
+
+.text-sm{
+    font-size: 1.02rem !important;
+}
+
+.btnSeleccionarFoto{
+    border: none;
+    background-color: var(--blanco);
+    color: var(--colorFuenteNegro);
+    border-color: var(--grisOscuro);
+    box-shadow: 0px 1px 1px var(--ColorEnProduccion);
+}

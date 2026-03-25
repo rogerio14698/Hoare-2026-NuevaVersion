@@ -1,0 +1,337 @@
+/* ===== Menú Horizontal ===== */
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    background-color: var(--colorNav, #0F1C26);
+    padding: 1.3rem 0 0 2.625rem;
+    height: 74px;
+    width: 100%;
+    z-index: 1030;
+
+}
+
+/* Logo */
+.menu-logo h1 {
+    margin: 0;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--colorFuenteBlanco, #fff); ;
+}
+
+.menu-logo h1 a {
+    color: var(--colorFuenteBlanco, #fff);
+    text-decoration: none;
+    letter-spacing: 0;
+}
+.mastareas {
+    display: flex;
+    float: left;
+    margin-top: -0.5rem;
+}
+.tarea-btn-nuevaTarea {
+    margin-left: -0.5rem;
+
+}
+/* Nav horizontal */
+.menu-horizontal {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-left: 2rem;
+    margin-top: 6px;
+    gap: 0.25rem;
+    overflow-y: visible;
+    white-space: nowrap;
+}
+
+/* Grupo de menú (cada sección: MAIN NAVIGATION, CONFIGURATION, etc.) */
+.menu-group {
+    position: relative;
+}
+
+.menu-group .group-title {
+
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    text-decoration: none !important;
+}
+
+.menu-group > a.group-title {
+       color: var(--colorMenu, #808080);
+    text-decoration: none !important;
+}
+
+.menu-group a, .group-title a {
+    color: var(--colorFuenteBlanco, #fff);
+}
+
+.menu-group .group-title:hover,
+.menu-group > a.group-title:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--colorFuenteBlanco, #fff) !important;
+}
+
+/* Dropdown de cada grupo */
+.menu-group > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--colorNav, #0F1C26);
+    min-width: 220px;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1050;
+}
+
+.menu-group:hover > ul {
+    display: block;
+}
+
+/* Ítems del menú */
+.menu-group > ul > li > a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+
+.menu-group > ul > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.menu-group > ul > li > a i {
+    width: 1.2em;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Badges/contadores en el menú */
+.menu-group > ul > li > a .badge {
+    margin-left: auto;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.menu-group > ul > li > a .badge-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.menu-group > ul > li > a .badge-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.menu-group > ul > li > a .badge-info {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.menu-group > ul > li > a .badge-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.menu-group > ul > li > a .badge-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.menu-group > ul > li > a:hover i {
+    color: #fff;
+}
+
+/* Sección de perfil */
+.menu-perfil {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+    padding-left: 1rem;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.menu-perfil img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.seccion-perfil {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    position: relative;
+}
+
+.seccion-perfil .perfil-toggle {
+    color: var(--colorFuenteBlanco, #fff);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.seccion-perfil .perfil-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.seccion-perfil .perfil-toggle i {
+    font-size: 0.6rem;
+    transition: transform 0.2s;
+}
+
+/* Dropdown del perfil */
+.perfil-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--colorNav, #0F1C26);
+    min-width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1050;
+}
+
+.seccion-perfil:hover .perfil-submenu {
+    display: block;
+}
+
+.seccion-perfil:hover .perfil-toggle i {
+    transform: rotate(180deg);
+}
+
+.perfil-submenu li {
+    margin: 0;
+    padding: 0;
+}
+
+.perfil-submenu li a,
+.perfil-submenu li button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.15s, color 0.15s;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.perfil-submenu li a:hover,
+.perfil-submenu li button:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.perfil-submenu li a i,
+.perfil-submenu li button i {
+    width: 1.2em;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.perfil-submenu li a:hover i,
+.perfil-submenu li button:hover i {
+    color: #fff;
+}
+
+/* Ajustar content-wrapper para que no quede debajo del header fijo */
+.content-wrapper {
+    margin-left: 0 !important;
+}
+
+/* Ocultar el sidebar y la navbar de AdminLTE */
+.main-sidebar {
+    display: none !important;
+}
+
+.main-header.navbar {
+    display: none !important;
+}
+
+/* Responsive: en móvil el menú se convierte en hamburguesa */
+@media (max-width: 992px) {
+    .menu-header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    .menu-horizontal {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        display: none;
+    }
+
+    .menu-header.menu-open .menu-horizontal {
+        display: flex;
+    }
+
+    .menu-group {
+        width: 100%;
+    }
+
+    .menu-group > ul {
+        position: static;
+        box-shadow: none;
+        display: none;
+        min-width: 100%;
+    }
+
+    .menu-group.open > ul {
+        display: block;
+    }
+
+    .menu-group .group-title {
+        display: block;
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+    }
+
+    .content-wrapper {
+        margin-top: 56px !important;
+    }
+}

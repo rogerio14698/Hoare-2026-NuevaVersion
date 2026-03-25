@@ -1,0 +1,37 @@
+a:link {
+    text-decoration: none!important;
+}
+
+div.mailbox-read-message div.pre {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+div.mailbox-read-message span.sig {
+    color: #666;
+}
+
+div.mailbox-read-message blockquote {
+    color: blue;
+    border-left: 2px solid blue;
+    border-right: 2px solid blue;
+    background-color: #F6F6F6;
+    margin: 2px 0;
+    padding: 0 0.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.mailbox-read-message blockquote blockquote {
+    color: green;
+    border-left: 2px solid green;
+    border-right: 2px solid green;
+}
+
+div.mailbox-read-message blockquote blockquote blockquote {
+    color: #900;
+    border-left: 2px solid #b00;
+    border-right: 2px solid #b00;
+}

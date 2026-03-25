@@ -1,0 +1,47 @@
+# Laravel específico
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.env.production
+.horae-2026_2026-03-12_16-00-26.sql.zip
+# IDE y editores
+/.idea
+/.vscode
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+
+# Vagrant
+/.vagrant
+Homestead.json
+Homestead.yaml
+
+# Logs y debugging
+npm-debug.log
+yarn-error.log
+/storage/logs/*.log
+
+# Cache y temporales
+/bootstrap/cache/*
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups y dumps de BD
+*.sql
+*.dump
+*.backup
+
+# Archivos sensibles de prácticas
+# (por si hay configuraciones específicas de la empresa)
+/config/local/
+*.local.php
