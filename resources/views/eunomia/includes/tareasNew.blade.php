@@ -6,6 +6,7 @@
             'en proceso' => 'bgColorEnProceso',
             'por hacer' => 'bgColorPorHacer',
             'en produccion' => 'bgColorEnProduccion',
+            'en producción' => 'bgColorEnProduccion',
             'en espera' => 'bgColorEnEspera',
             'cliente' => 'bgColorCliente',
             'facturar' => 'bgColorFacturar',

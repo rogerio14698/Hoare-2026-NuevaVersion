@@ -2,7 +2,7 @@
 
 @section('content_header')
     <div class="alinearHeader">
-        <h1 class="fuenteTitulo">Listado de Fichajes</h1>
+        <h1 class="fuenteTitulo">Listado de Fichajes modificar</h1>
     </div>
 @stop
 

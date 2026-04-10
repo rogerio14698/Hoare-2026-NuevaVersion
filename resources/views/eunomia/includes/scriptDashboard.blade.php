@@ -158,26 +158,21 @@
           end: '{{$task->fechaentrega_tarea->format('Y-m-d H:i:s')}}',
           url: '/eunomia/tasks/{{$task->id}}/edit',
           @if ($task->estado_tarea == 1)
-            backgroundColor: "#f39c12",
-            borderColor: "#f39c12",
+                        className: 'bgColorEnProceso',
           @elseif ($task->estado_tarea == 2)
-            backgroundColor: "#605ca8",
-            borderColor: "#605ca8",
+                        className: 'bgColorEnEspera',
           @elseif ($task->estado_tarea == 3)
-            backgroundColor: "#00a65a",
-            borderColor: "#00a65a",
+                        className: 'bgColorEnProduccion',
           @elseif ($task->estado_tarea == 4)
-            backgroundColor: "#b2d2d1",
-            borderColor: "#b2d2d1",
+                        className: 'bgColorCerrado',
           @elseif ($task->estado_tarea == 5)
-            backgroundColor: "#0073b7",
-            borderColor: "#0073b7",
+                        className: 'bgColorCliente',
           @elseif ($task->estado_tarea == 6)
-            backgroundColor: "#dd4b39",
-            borderColor: "#dd4b39",
+                        className: 'bgColorPorHacer',
           @elseif ($task->estado_tarea == 7)
-            backgroundColor: "#000000",
-            borderColor: "#000000",
+                        className: 'bgColorFacturar',
+                    @else
+                        className: 'bgColorDefault',
           @endif
           allDay: false
         },
@@ -189,8 +184,7 @@
           title: '{{$party_day->name}}',
           start: '{{$party_day->date}}',
           end: '{{$party_day->date}}',
-          backgroundColor: "#626568",
-          borderColor: "#626568",
+                    className: 'bgColorPartyDay',
           allDay: true,
           editable: false
         },
@@ -202,8 +196,7 @@
           title: 'Vacaciones {{$holiday_day->user->name}}',
           start: '{{$holiday_day->date}}',
           end: '{{$holiday_day->date}}',
-          backgroundColor: "#BABEC1",
-          borderColor: "#BABEC1",
+                    className: 'bgColorHolidayDay',
           allDay: true,
           editable: false
         }@if(!$loop->last),@endif

@@ -60,7 +60,7 @@
     padding: 0.35rem 0.5rem !important;
     text-transform: uppercase !important;
     font-weight: 600 !important;
-    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+    border-bottom: 2px solid var(--grisAzulado) !important;
 }
 
 /* Asegurar contraste en el número del día dentro del encabezado */
@@ -69,9 +69,56 @@
     font-weight: 600 !important;
 }
 
-/* Celdas del calendario: fondo armonizado */
-.card-calendario #calendar .fc-day, .card-calendario #calendar .fc-day-top {
+/* Celdas del calendario: fondo armonizado + bordes visibles entre días */
+.card-calendario #calendar .fc-day,
+.card-calendario #calendar .fc-day-top {
     background-color: var(--colorBGIntermedio) !important;
+    border: 1px solid var(--grisAzulado) !important;
+}
+
+/* Bordes de la tabla general del calendario */
+.card-calendario #calendar table,
+.card-calendario #calendar .fc-row,
+.card-calendario #calendar .fc-row table {
+    border-collapse: collapse !important;
+}
+
+/* Filas de semana: línea inferior marcada para separar semanas */
+.card-calendario #calendar .fc-row {
+    border-bottom: 2px solid var(--grisAzulado) !important;
+}
+
+/* Columnas de la cabecera de días */
+.card-calendario #calendar th.fc-day-header {
+    border: 1px solid var(--grisAzulado) !important;
+    border-bottom: 2px solid var(--grisAzulado) !important;
+}
+
+/* Borde solo en la rejilla base del mes (no en la capa interna de eventos) */
+.card-calendario #calendar .fc-day-grid .fc-bg td {
+    border: 1px solid var(--grisAzulado) !important;
+}
+
+/* Quitar líneas finas internas que dibuja la capa de contenido de eventos */
+.card-calendario #calendar .fc-day-grid .fc-content-skeleton td,
+.card-calendario #calendar .fc-day-grid .fc-content-skeleton tr {
+    border: 0 !important;
+}
+
+/* Separadores verticales robustos entre columnas (vista mes) */
+.card-calendario #calendar .fc-day-header + .fc-day-header {
+    box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+.card-calendario #calendar .fc-day-grid .fc-row td + td {
+    box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Número de día: empujar a la esquina y destacar */
+.card-calendario #calendar .fc-day-number {
+    color: var(--colorFuenteBlanco) !important;
+    font-weight: 600 !important;
+    padding: 4px 6px !important;
 }
 
 /* Pastillas (events) — diseño refinado para evitar solapamientos */
@@ -127,6 +174,18 @@
 .card-calendario #calendar .fc-event.bgColorFacturar { background-color: var(--ColorFacturar) !important; }
 .card-calendario #calendar .fc-event.bgColorCerrado { background-color: var(--ColorCerrado) !important; }
 .card-calendario #calendar .fc-event.bgColorRol { background-color: var(--ColorRol) !important; }
+.card-calendario #calendar .fc-event.bgColorDefault { background-color: var(--colorBGGris) !important; }
+
+/* Tipos de evento no ligados al estado de tarea */
+.card-calendario #calendar .fc-event.bgColorPartyDay {
+    background-color: #626568 !important;
+    color: var(--colorFuenteBlanco) !important;
+}
+
+.card-calendario #calendar .fc-event.bgColorHolidayDay {
+    background-color: #babec1 !important;
+    color: var(--colorFuenteNegro) !important;
+}
 
 /* Forzar color de texto según contraste: si fondo claro usar texto oscuro, si fondo blanco forzar negro */
 .card-calendario #calendar .fc-event.bgColorFacturar { color: var(--colorFuenteNegro) !important; }
@@ -172,3 +231,4 @@
    preferimos añadir además la clase correspondiente en el objeto event para que este CSS pueda
    aplicarse sin depender de hex; recomendamos cambiar JS para usar `className` en lugar de
    backgroundColor. */
+
